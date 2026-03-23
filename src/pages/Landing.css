@@ -1,0 +1,113 @@
+/* Full page */
+.landing-container {
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fc;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-top: 80px;
+  padding: 0 20px;
+}
+
+.badge {
+  display: inline-block;
+  background: #e0ecff;
+  color: #2563eb;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.subtitle {
+  margin-top: 20px;
+  color: #555;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-btn {
+  margin-top: 30px;
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.main-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 80px;
+  padding: 0 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  width: 260px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.card p {
+  color: #666;
+  margin-top: 8px;
+}

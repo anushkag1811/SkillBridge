@@ -1,0 +1,211 @@
+/* Page */
+.upload-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f9fc;
+  min-height: 100vh;
+}
+
+/* Top bar */
+.topbar {
+  padding: 15px 30px;
+  border-bottom: 1px solid #eee;
+  background: white;
+}
+
+.back {
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+}
+
+.back:hover {
+  color: #2563eb;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.header h1 {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.header p {
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Content */
+.content {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 0 30px;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+}
+
+/* Labels */
+.label {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #444;
+  font-weight: 500;
+}
+
+/* Upload box */
+.upload-box {
+  display: block;
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #777;
+  transition: 0.3s;
+}
+
+.upload-box:hover {
+  border-color: #2563eb;
+  background: #f0f6ff;
+}
+
+/* OR */
+.or {
+  text-align: center;
+  margin: 15px 0;
+  color: #888;
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-family: inherit;
+  transition: 0.2s;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Scrollable Textarea */
+.scroll-textarea {
+  margin-top: 5px;
+  overflow-y: auto;
+}
+
+/* 🔽 Dropdown */
+.dropdown {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dropdown:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Skill Input */
+.skill-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: 0.2s;
+}
+
+.skill-input:focus {
+  outline: none;
+  border-color: #9333ea;
+  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.2);
+}
+
+/* Add Skill Button */
+.add-skill-btn {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border: none;
+  background: linear-gradient(to right, #2563eb, #9333ea);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.add-skill-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Button */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.analyze-btn {
+  background: linear-gradient(to right, #2563eb, #9333ea);
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.analyze-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+
+  .header h1 {
+    font-size: 26px;
+  }
+}
