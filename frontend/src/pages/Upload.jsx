@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./upload.css";
-import { jobsData } from "../data/jobsData"; // import dataset
+import { jobsData } from "../data/jobsData";
 
 const Upload = () => {
   const navigate = useNavigate();
@@ -10,17 +10,17 @@ const Upload = () => {
   const [syllabusText, setSyllabusText] = useState("");
   const [jobDesc, setJobDesc] = useState("");
 
-  // NEW: Job + Skills State
+  // Store FULL skill objects
   const [selectedJob, setSelectedJob] = useState("");
   const [skills, setSkills] = useState([]);
 
-  // Handle file upload
+  // 📄 File upload
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     setFile(selectedFile);
   };
 
-  // Handle job selection
+  // 🎯 Job selection
   const handleJobChange = (e) => {
     const jobTitle = e.target.value;
     setSelectedJob(jobTitle);
@@ -28,22 +28,31 @@ const Upload = () => {
     const job = jobsData.find((j) => j.jobTitle === jobTitle);
 
     if (job) {
-      setSkills(job.skills); // auto-fill skills
+      setSkills(job.skills); // keep full objects
+    } else {
+      setSkills([]);
     }
   };
 
-  // Handle skill change (editable)
+  // ✏️ Edit skill name only
   const handleSkillChange = (index, value) => {
     const updatedSkills = [...skills];
-    updatedSkills[index] = value;
+    updatedSkills[index] = {
+      ...updatedSkills[index],
+      name: value,
+    };
     setSkills(updatedSkills);
   };
 
-  // Add new skill
+  // ➕ Add new skill
   const addSkillField = () => {
-    setSkills([...skills, ""]);
+    setSkills([
+      ...skills,
+      { name: "", category: "Custom", priority: "low" },
+    ]);
   };
 
+  // 🚀 Navigate + send ONLY skill names
   const handleAnalyze = () => {
     navigate("/analyze", {
       state: {
@@ -51,7 +60,7 @@ const Upload = () => {
         syllabusText,
         jobDesc,
         selectedJob,
-        skills,
+        skills: skills.map((s) => s.name), // IMPORTANT FIX
       },
     });
   };
@@ -66,7 +75,7 @@ const Upload = () => {
         </span>
       </div>
 
-      {/* Heading */}
+      {/* Header */}
       <div className="header">
         <h1>Analyze Your Skill Gap</h1>
         <p>
@@ -75,10 +84,10 @@ const Upload = () => {
         </p>
       </div>
 
-      {/* Main Section */}
+      {/* Main Content */}
       <div className="content">
 
-        {/* Left Card */}
+        {/* LEFT: SYLLABUS */}
         <div className="card">
           <h2>📄 College Syllabus</h2>
 
@@ -105,11 +114,11 @@ const Upload = () => {
           ></textarea>
         </div>
 
-        {/* Right Card */}
+        {/* RIGHT: JOB */}
         <div className="card">
           <h2>🎯 Target Job</h2>
 
-          {/* 🔽 Job Dropdown */}
+          {/* Dropdown */}
           <p className="label">Select Job Role</p>
           <select
             className="dropdown"
@@ -124,6 +133,7 @@ const Upload = () => {
             ))}
           </select>
 
+          {/* Job Description */}
           <p className="label">Paste Job Description (Optional)</p>
           <textarea
             className="scroll-textarea"
@@ -132,14 +142,14 @@ const Upload = () => {
             onChange={(e) => setJobDesc(e.target.value)}
           ></textarea>
 
-          {/* Skills Section */}
+          {/* Skills */}
           <p className="label">Required Skills</p>
 
           {skills.map((skill, index) => (
             <input
               key={index}
               type="text"
-              value={skill}
+              value={skill.name}   // ✅ FIX HERE
               onChange={(e) => handleSkillChange(index, e.target.value)}
               className="skill-input"
             />
@@ -153,7 +163,7 @@ const Upload = () => {
         </div>
       </div>
 
-      {/* Button */}
+      {/* Analyze Button */}
       <div className="btn-container">
         <button className="analyze-btn" onClick={handleAnalyze}>
           Analyze Gap

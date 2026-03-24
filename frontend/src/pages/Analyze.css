@@ -1,0 +1,24 @@
+.score-card {
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.tag {
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.green {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.red {
+  background: #fee2e2;
+  color: #991b1b;
+}
